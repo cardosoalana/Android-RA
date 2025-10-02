@@ -1,0 +1,19 @@
+/opt/android-studio/jbr/bin/java \
+  --class-path \
+  /home/alanacardoso/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar \
+  com.google.prefab.cli.AppKt \
+  --build-system \
+  cmake \
+  --platform \
+  android \
+  --abi \
+  arm64-v8a \
+  --os-version \
+  30 \
+  --stl \
+  c++_shared \
+  --ndk-version \
+  27 \
+  --output \
+  /tmp/agp-prefab-staging5458202234334671801/staged-cli-output \
+  /home/alanacardoso/.gradle/caches/8.13/transforms/ecaa8427710b1e240d5862102592cd54/transformed/jetified-games-activity-3.0.5/prefab

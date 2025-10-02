@@ -1,0 +1,4 @@
+/home/alanacardoso/Android/Sdk/cmake/3.22.1/bin/ninja \
+  -C \
+  /home/alanacardoso/AndroidStudioProjects/ARProject/unityLibrary/.cxx/Debug/6r6d4w5y/arm64-v8a \
+  game
