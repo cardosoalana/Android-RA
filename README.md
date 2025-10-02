@@ -24,28 +24,6 @@ This repository contains an Augmented Reality (AR) library built using **Unity (
 
 ---
 
-## 🧩 Project Structure
-
-ARProject/
-├── app/ # Native Android app (Jetpack Compose)
-│ └── MainActivity.kt
-├── unityLibrary/ # Unity exported module (Gradle)
-│ └── UnityPlayerGameActivity.java
-├── build.gradle # Project-level Gradle config
-├── settings.gradle # Includes both modules
-└── README.md
-
-yaml
-Copiar código
-
-- **:app**  
-  Contains the main Kotlin UI logic and button to launch AR experience.
-
-- **:unityLibrary**  
-  Contains compiled Unity logic, C# scripts, assets, and native binaries.
-
----
-
 ## 🏗️ How the Integration Works (Android)
 
 1. The Unity project is exported as a Gradle module (`unityLibrary`).
