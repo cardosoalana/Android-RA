@@ -1,53 +1,62 @@
-🚀 Cross-Platform Augmented Reality (AR) Integration with Unity and Kotlin
-This repository hosts the Augmented Reality (AR) library built with Unity (AR Foundation) and the host application built with Android/Kotlin (Jetpack Compose), created to test ARCore integration and functionality on mobile devices.
+# 🚀 Cross-Platform Augmented Reality (AR) Integration with Unity and Kotlin
 
-The main goal of this project is to encapsulate an AR feature into a self-contained Unity module, allowing it to be launched on demand from a native host application. The ultimate aim is to transition to React Native for a true cross-platform solution.
+This repository contains an Augmented Reality (AR) library built using **Unity (AR Foundation)** and a native host app built with **Kotlin + Jetpack Compose**. The main goal is to encapsulate AR functionality into a self-contained Unity module, enabling it to be triggered on demand from a native Android application.
 
-🛠️ Technology Stack
-Component	Technology	Role
-AR Core	Unity 6.2 (URP)	Development of surface detection logic (Plane Detection) and 3D object placement.
-AR Framework	AR Foundation 6.x	Abstraction layer enabling the code to function on both ARCore (Android) and ARKit (iOS).
-Host App	Kotlin & Jetpack Compose	Modern user interface and the entry point for launching the Unity module.
-Integration	Unity Module as Gradle Library	Export method allowing the Unity module to execute within the Kotlin runtime environment.
 
-Exportar para as Planilhas
-✨ Implemented Feature
-The Unity project currently includes the basic Augmented Reality functionality:
+## 🛠️ Technology Stack
 
-Environmental Tracking: Uses ARCore for 6 Degrees of Freedom (6 DoF) positional tracking and horizontal plane detection.
+| Component         | Technology                 | Role                                                                 |
+|------------------|----------------------------|----------------------------------------------------------------------|
+| **AR Engine**     | Unity 6.2 (URP)             | Handles surface detection and 3D object placement                   |
+| **AR Framework**  | AR Foundation 6.x           | Abstraction for ARCore (Android) and ARKit (iOS) support            |
+| **Host App**      | Kotlin + Jetpack Compose    | Modern UI and entry point for launching the Unity module            |
+| **Integration**   | Unity Library via Gradle    | Exported Unity module run as part of Android app using Intents      |
 
-Object Placement: Allows the user to tap a detected surface (floor, table) to instantiate or move a 3D object (currently a simple Cube).
+---
 
-🏗️ How the Integration Works (Android)
-The integration is managed through the Gradle build system, treating the Unity scene as a fully contained, launchable Android Activity:
+## ✨ Features Implemented
 
-The Unity project is exported as the unityLibrary folder (a Gradle module).
+- **🔍 Environmental Tracking**  
+  Uses ARCore for positional tracking with 6 Degrees of Freedom (6DoF) and horizontal plane detection.
 
-The main app's AndroidManifest.xml is configured to declare the UnityPlayerGameActivity.
+- **📦 Object Placement**  
+  Users can tap on detected surfaces (e.g., floor, table) to place or move a 3D object (currently a simple cube).
 
-The Kotlin/Compose code initiates the AR experience using an explicit Intent directed at the UnityPlayerGameActivity.
+---
 
-Module Structure
-:app (Kotlin/Compose): Contains the MainActivity and the UI button logic.
+## 🧩 Project Structure
 
-:unityLibrary (Unity): Contains the compiled C# logic, assets, and native binaries.
+ARProject/
+├── app/ # Native Android app (Jetpack Compose)
+│ └── MainActivity.kt
+├── unityLibrary/ # Unity exported module (Gradle)
+│ └── UnityPlayerGameActivity.java
+├── build.gradle # Project-level Gradle config
+├── settings.gradle # Includes both modules
+└── README.md
 
-👨‍💻 Setup and Installation (For Contributors)
-To set up and run this project in your local environment:
+yaml
+Copiar código
 
-Clone the Repository:
+- **:app**  
+  Contains the main Kotlin UI logic and button to launch AR experience.
 
-Bash
+- **:unityLibrary**  
+  Contains compiled Unity logic, C# scripts, assets, and native binaries.
 
-git clone https://github.com/cardosoalana/RA-Unit-Project.git
-cd ARProject
-Open in Android Studio: Open the ARProject folder in Android Studio (version 2023.x or later).
+---
 
-Unity Environment: Ensure you have Unity Editor 6.2 with the Android and iOS modules installed.
+## 🏗️ How the Integration Works (Android)
 
-Native Cache Check: If you encounter UnsatisfiedLinkError errors, run a cleanup in the terminal:
+1. The Unity project is exported as a Gradle module (`unityLibrary`).
+2. The Android host app declares the Unity activity (`UnityPlayerGameActivity`) in the `AndroidManifest.xml`.
+3. The Kotlin app launches the Unity activity via an explicit `Intent`.
 
-Bash
+---
 
-./gradlew clean
-Build and Run: Compile and deploy the application to your physical Android device (API 24+ required) that supports ARCore.
+## 👨‍💻 Setup & Installation (For Contributors)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/cardosoalan
