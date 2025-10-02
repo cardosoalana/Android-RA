@@ -37,4 +37,5 @@ This repository contains an Augmented Reality (AR) library built using **Unity (
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/cardosoalan
+git clone https://github.com/cardosoalana/RA-Unit-Project.git
+cd ARProject
